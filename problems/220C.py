@@ -5,8 +5,13 @@ x = int(input())
 s = sum(a)
 p = math.floor(x/s)
 k = p*s
+f = 0
 for i in range(n):
-    k += a[i]
     if k > x:
-        print(p*n+i+1)
+        f = 1
+        print(p*n+i)
         break
+    else:
+        k += a[i]
+if f == 0 and k > x:
+    print(p*n+n)
